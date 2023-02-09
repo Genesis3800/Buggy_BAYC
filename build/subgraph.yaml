@@ -3,7 +3,7 @@ description: A subgraph to index data on the Bored Apes contract
 features:
   - ipfsOnEthereumContracts
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: BAYC
@@ -22,8 +22,8 @@ dataSources:
         - Property
       abis:
         - name: BAYC
-          file: ./abis/BAYC.json
+          file: BAYC/abis/BAYC.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-      file: ./src/bayc.ts
+      file: BAYC/BAYC.wasm
